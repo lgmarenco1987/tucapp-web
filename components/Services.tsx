@@ -28,28 +28,20 @@ export default function Services({ content }) {
                     </div>
                 </div>
             </section>
-            <section className="-mt-36 md:-mt-60">
-                <div className="justify-between items-center lg:flex lg:flex-row-reverse">
-                    <div style={{
-                        backgroundImage: `url("/img/Assets.svg")`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'right',
-                        width: '90%',
-                        backgroundSize: 'contain'
-                    }}>
-
-                        <Image
-                            src={"https:" + thirdContentImage.fields.file.url}
-                            width={thirdContentImage.fields.file.details.image.width}
-                            height={thirdContentImage.fields.file.details.image.height}
-                            className="ml-5 mt-28 md:ml-0" />
-                    </div>
+            <section className="-mt-14 md:-mt-60">
+                <div className="justify-between items-center flex flex-row">
                     <div className="lowercase p-5 m-5 lg:p-32 lg:m-10">
                         <p className="text-lg">{thirdContent.content[0].content[0].value || 'Contenido'}</p>
                         <h1 className="text-8xl font-bold text-warning">{thirdContent.content[1].content[0].value || 'Contenido'}</h1>
                         <p className="py-6 text-lg">{thirdContent.content[2].content[0].value || 'Contenido'}</p>
                         <button className="btn btn-secondary btn-wide lowercase text-base-100">quiero intentarlo</button>
                     </div>
+
+                        <Image
+                            src={"https:" + thirdContentImage.fields.file.url}
+                            width={thirdContentImage.fields.file.details.image.width}
+                            height={thirdContentImage.fields.file.details.image.height}
+                            className="invisible md:visible ml-5 mt-28 bg-[url('/img/Assets.svg')]" />
                 </div>
             </section>
         </>
