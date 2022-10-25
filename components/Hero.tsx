@@ -31,7 +31,7 @@ export default function Hero({ content }) {
                         <h1 className="text-8xl font-bold text-secondary">{mainContent.content[1].content[0].value || 'Contenido'}</h1>
                         <p className="py-6">{mainContent.content[2].content[0].value || 'Contenido'}</p>
                         <div className="flex flex-row space-x-4">
-                            <img src="/img/Google.svg" />
+                            <Image src="/img/Google.svg" width='200px' height='50px'/>
                             <button className="btn btn-primary md:btn-wide text-white lowercase">conoce más</button>
                         </div>
 
