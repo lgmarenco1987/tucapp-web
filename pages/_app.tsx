@@ -18,14 +18,11 @@ function MyApp({ Component, pageProps }) {
   if(error) return 'error has occurred'
   if(!data) return <div className="w-full items-center">Cargando</div>
 
-  const { whatsApp, linkedIn, facebook, instagram } = data.props.social
-
-
   return (
     <>
-      <NavBar whatsApp={whatsApp} linkedIn={linkedIn} facebook={facebook} instagram = {instagram}/>
+      <NavBar data = {data}/>
       <Component {...pageProps} />
-      <Footer whatsApp={whatsApp} linkedIn={linkedIn} facebook={facebook} instagram = {instagram}/>
+      <Footer data = {data}/>
     </>
   );
 }

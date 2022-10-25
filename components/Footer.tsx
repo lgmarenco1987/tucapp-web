@@ -3,7 +3,8 @@ import Link from "next/link"
 import { FaFacebookSquare, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import CappLogo from "./CappLogo"
 
-export default function Footer({whatsApp, linkedIn, facebook, instagram }) {
+export default function Footer({ data }) {
+    const { whatsApp, linkedIn, facebook, instagram } = data.props.social
     return (
         <footer className="footer footer-center p-5 bg-primary text-white">
             <div>

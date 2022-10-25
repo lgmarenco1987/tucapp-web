@@ -28,7 +28,8 @@ const navigationRoutes = [
     }]
 
 
-export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
+export default function NavBar({ data }) {
+    const { whatsApp, linkedIn, facebook, instagram } = data.props.social
     const router = useRouter()
 
     return (
