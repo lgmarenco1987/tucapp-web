@@ -8,12 +8,28 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 
-export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
+const navigationRoutes = [
+    {
+        name: "secreto",
+        url: '/app',
+        icon: <FaLock />
+    },{
+        name: "comunidad",
+        url: '/blog',
+        icon: <BsFillPeopleFill />
+    },{
+        name: "misión",
+        url: '/about',
+        icon: <IoRocketSharp />
+    },{
+        name: "noticias",
+        url: '/articles',
+        icon: <FaRss />
+    }]
 
-    const activeMenu = () => {
-        const activeRoute = useRouter().asPath
-        return activeRoute
-    }
+
+export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
+    const router = useRouter()
 
     return (
         <div>
@@ -28,39 +44,17 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li>
-                            <Link href="/app">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/app"? "scale-110 text-secondary" : "text-white")}
-                                >
-                                    <FaLock /> <span className="ml-2">secreto</span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/blog">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/blog" ? "scale-110 text-secondary" : "text-white")}
-                                >
-                                    <BsFillPeopleFill /><span className="ml-2">comunidad</span>
-                                </a>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/about">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/about" ? "scale-110 text-secondary" : "text-white")}
-                                >
-                                    <IoRocketSharp /><span className="ml-2">misión</span>
-                                </a>
-                            </Link>
-
-                        </li>
-                        <li>
-                            <Link href="/articles">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/articles" ? "scale-110 text-secondary" : "text-white")}
-                                >
-                                    <FaRss /><span className="ml-2">noticias</span>
-                                </a>
-                            </Link>
-                        </li>
+                        {navigationRoutes.map((singleRoute) => {
+                            console.log(singleRoute.url)
+                            return (
+                                <NavLink
+                                    key={singleRoute.url}
+                                    href={singleRoute.url}
+                                    text={singleRoute.name}
+                                    icon={singleRoute.icon}
+                                    router={router} />
+                            )
+                        })}
                     </ul>
                 </div>
                 <div className="dropdown dropdown-end">
@@ -80,7 +74,7 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
                         </li>
                         <li>
                             <Link href="/about" >
-                            <a className='text-white'><IoRocketSharp /><span className="ml-2">misión</span></a>
+                                <a className='text-white'><IoRocketSharp /><span className="ml-2">misión</span></a>
                             </Link>
                         </li>
                         <li>
@@ -95,9 +89,23 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
     )
 }
 
-function Band({ whatsApp, linkedIn, facebook, instagram }) {
-    
 
+function NavLink({ href, text, router, icon }) {
+    const isActive = router.asPath === href
+
+    return (
+        <Link href={href} passHref>
+            <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (isActive ? "scale-110 text-secondary" : "text-white")}
+            >
+                {icon}<span className="ml-2">{text}</span>
+            </a>
+        </Link>
+    )
+
+
+}
+
+function Band({ whatsApp, linkedIn, facebook, instagram }) {
     return (
         <div className="flex flex-wrap sm:justify-between justify-center items-center bg-purple-400 w-full text-white lg:px-36">
             <div className="flex flex-wrap">
