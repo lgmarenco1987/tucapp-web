@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.1",
     "contentful": "^9.2.5",
     "daisyui": "^2.31.0",
     "next": "12.3.1",

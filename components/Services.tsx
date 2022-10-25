@@ -28,8 +28,20 @@ export default function Services({ content }) {
                     </div>
                 </div>
             </section>
-            <section className="-mt-14 md:-mt-40">
-                <div className="justify-between items-center flex flex-row">
+            <section className="-mt-10 md:-mt-40 justify-between flex hero">
+                <div className="hero-content justify-center items-center lg:flex lg:flex-row-reverse">
+
+                    <div style={{
+                        backgroundImage: `url("/img/blob-1.svg")`,
+                        backgroundRepeat: 'no-repeat',
+                        width: '100%'
+                    }}>
+                        <Image
+                            src={"https:" + thirdContentImage.fields.file.url}
+                            width={thirdContentImage.fields.file.details.image.width}
+                            height={thirdContentImage.fields.file.details.image.height}
+                            className="ml-5 mt-28" />
+                    </div>
                     <div className="lowercase p-5 m-5 lg:p-32 lg:m-10">
                         <p className="text-lg">{thirdContent.content[0].content[0].value || 'Contenido'}</p>
                         <h1 className="text-8xl font-bold text-warning">{thirdContent.content[1].content[0].value || 'Contenido'}</h1>
@@ -37,11 +49,6 @@ export default function Services({ content }) {
                         <button className="btn btn-secondary btn-wide lowercase text-base-100">quiero intentarlo</button>
                     </div>
 
-                        <Image
-                            src={"https:" + thirdContentImage.fields.file.url}
-                            width={thirdContentImage.fields.file.details.image.width}
-                            height={thirdContentImage.fields.file.details.image.height}
-                            className="invisible md:visible ml-5 mt-28 bg-[url('/img/Assets.svg')]" />
                 </div>
             </section>
         </>
