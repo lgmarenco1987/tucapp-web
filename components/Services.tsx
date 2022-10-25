@@ -28,7 +28,7 @@ export default function Services({ content }) {
                     </div>
                 </div>
             </section>
-            <section className="-mt-14 md:-mt-60">
+            <section className="-mt-14 md:-mt-40">
                 <div className="justify-between items-center flex flex-row">
                     <div className="lowercase p-5 m-5 lg:p-32 lg:m-10">
                         <p className="text-lg">{thirdContent.content[0].content[0].value || 'Contenido'}</p>
