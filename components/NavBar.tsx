@@ -6,14 +6,13 @@ import { IoRocketSharp } from "react-icons/io5"
 import CappLogo from './CappLogo'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useRef } from 'react'
 
 
 export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
 
-    const activeMenu = (route) => {
-        const activeRoute = useRouter()
-        return route === activeRoute.asPath
+    const activeMenu = () => {
+        const activeRoute = useRouter().asPath
+        return activeRoute
     }
 
     return (
@@ -31,7 +30,7 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
                     <ul className="menu menu-horizontal p-0">
                         <li>
                             <Link href="/app">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu("/app") ? "scale-110 text-secondary" : "text-white")}
+                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/app"? "scale-110 text-secondary" : "text-white")}
                                 >
                                     <FaLock /> <span className="ml-2">secreto</span>
                                 </a>
@@ -39,7 +38,7 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
                         </li>
                         <li>
                             <Link href="/blog">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu("/blog") ? "scale-110 text-secondary" : "text-white")}
+                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/blog" ? "scale-110 text-secondary" : "text-white")}
                                 >
                                     <BsFillPeopleFill /><span className="ml-2">comunidad</span>
                                 </a>
@@ -47,7 +46,7 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
                         </li>
                         <li>
                             <Link href="/about">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu("/about") ? "scale-110 text-secondary" : "text-white")}
+                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/about" ? "scale-110 text-secondary" : "text-white")}
                                 >
                                     <IoRocketSharp /><span className="ml-2">misión</span>
                                 </a>
@@ -56,7 +55,7 @@ export default function NavBar({ whatsApp, linkedIn, facebook, instagram }) {
                         </li>
                         <li>
                             <Link href="/articles">
-                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu("/articles") ? "scale-110 text-secondary" : "text-white")}
+                                <a className={"hover:scale-110 transition px-3 py-2 flex items-center leading-snug hover:text-secondary " + (activeMenu() === "/articles" ? "scale-110 text-secondary" : "text-white")}
                                 >
                                     <FaRss /><span className="ml-2">noticias</span>
                                 </a>
