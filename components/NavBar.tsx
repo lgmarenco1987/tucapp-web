@@ -46,7 +46,6 @@ export default function NavBar({ data }) {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         {navigationRoutes.map((singleRoute) => {
-                            console.log(singleRoute.url)
                             return (
                                 <NavLink
                                     key={singleRoute.url}
