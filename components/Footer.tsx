@@ -19,8 +19,8 @@ export default function Footer({ data }) {
                     <a className="hover:text-blue-400 hover:scale-125 transition" target="_blank" rel="noreferrer noopener" href={linkedIn}><FaLinkedin className="text-2xl" /></a>
                 </div>
             </div>
-            
-            <div>
+
+            <div> 
                 <p>Copyright © {new Date().getFullYear()} - Todos los derechos reservados</p>
                 <p>
                     <Link href="/privacy">
