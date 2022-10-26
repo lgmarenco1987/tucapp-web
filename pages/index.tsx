@@ -5,7 +5,7 @@ import Head from "next/head"
 
 import { getMainContent } from "../lib/contentful"
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await getMainContent()
   return {props: { home: res?.home?.fields }}
 }
