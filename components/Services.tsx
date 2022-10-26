@@ -29,7 +29,7 @@ export default function Services({ content }) {
                 </div>
             </section>
             <section className="-mt-10 md:-mt-40 justify-between flex hero">
-                <div className="hero-content justify-center items-center lg:flex lg:flex-row-reverse">
+                <div className="justify-center items-center lg:flex lg:flex-row-reverse">
 
                     <div style={{
                         backgroundImage: `url("/img/blob-1.svg")`,
