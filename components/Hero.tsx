@@ -32,7 +32,7 @@ export default function Hero({ content }) {
                         <p className="py-6">{mainContent.content[2].content[0].value || 'Contenido'}</p>
                         <div className="flex flex-row space-x-4">
                             <Image src="/img/Google.svg" width='200px' height='50px'/>
-                            <button className="btn btn-primary md:btn-wide text-white ">conoce más</button>
+                            <button className="btn btn-primary md:btn-wide text-white lowercase">conoce más</button>
                         </div>
 
                     </div>

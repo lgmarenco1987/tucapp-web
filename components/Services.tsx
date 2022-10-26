@@ -24,7 +24,7 @@ export default function Services({ content }) {
                         <p className="text-lg">{secondaryContent.content[0].content[0].value || 'Contenido'}</p>
                         <h1 className="text-8xl font-bold text-primary">{secondaryContent.content[1].content[0].value || 'Contenido'}</h1>
                         <p className="py-6 text-lg">{secondaryContent.content[2].content[0].value || 'Contenido'}</p>
-                        <button className="btn btn-secondary btn-wide  text-base-100">saber <AiOutlinePlus className="text-bold" /></button>
+                        <button className="btn btn-secondary btn-wide text-base-100 lowercase">saber <AiOutlinePlus className="text-bold" /></button>
                     </div>
                 </div>
             </section>
@@ -46,7 +46,7 @@ export default function Services({ content }) {
                         <p className="text-lg">{thirdContent.content[0].content[0].value || 'Contenido'}</p>
                         <h1 className="text-8xl font-bold text-warning">{thirdContent.content[1].content[0].value || 'Contenido'}</h1>
                         <p className="py-6 text-lg">{thirdContent.content[2].content[0].value || 'Contenido'}</p>
-                        <button className="btn btn-secondary btn-wide  text-base-100">quiero intentarlo</button>
+                        <button className="btn btn-secondary btn-wide  text-base-100 lowercase">quiero intentarlo</button>
                     </div>
 
                 </div>
