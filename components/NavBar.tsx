@@ -109,7 +109,7 @@ function Band({ whatsApp, linkedIn, facebook, instagram }) {
     return (
         <div className="flex flex-wrap sm:justify-between justify-center items-center bg-purple-400 w-full text-white lg:px-36">
             <div className="flex flex-wrap">
-                <a className='flex items-center hover:text-green-500 hover:scale-110 transition' href={"https://api.whatsapp.com/send?text=Hola%20Capp!,%20Estoy%20interesado%20en%20empezar%20a%20usar%20la%20app%20%C2%BFQu%C3%A9%20necesito%20hacer?&phone=" + whatsApp.replace(/\s/g, '')}><FaWhatsapp /> <span className='text-sm'>{whatsApp}</span></a>
+                <a className='flex items-center hover:text-green-500 hover:scale-110 transition' target="_blank" rel="noreferrer noopener" href={"https://api.whatsapp.com/send?text=Hola%20Capp!,%20Estoy%20interesado%20en%20empezar%20a%20usar%20la%20app%20%C2%BFQu%C3%A9%20necesito%20hacer?&phone=" + whatsApp.replace(/\s/g, '')}><FaWhatsapp /> <span className='text-sm'>{whatsApp}</span></a>
                 <a className='flex items-center space-x-2 m-2 text-sm hover:scale-110 transition' href='mailto:info@tucapp.com'><IoMdMail /> <span>info@tucapp.com</span></a>
             </div>
             <div className='flex space-x-3'>
@@ -117,13 +117,13 @@ function Band({ whatsApp, linkedIn, facebook, instagram }) {
                     <ImLocation /> <span className='text-sm'>Bogotá, Colombia</span>
                 </div>
                 <div className="flex flex-wrap items-center">
-                    <a className="hover:text-blue-600 hover:scale-125 transition" href={facebook} ><FaFacebookSquare /></a>
+                    <a className="hover:text-blue-600 hover:scale-125 transition" target="_blank" rel="noreferrer noopener" href={facebook} ><FaFacebookSquare /></a>
                 </div>
                 <div className="flex flex-wrap items-center">
-                    <a className="hover:text-pink-500 hover:scale-125 transition" href={instagram} ><FaInstagram /></a>
+                    <a className="hover:text-pink-500 hover:scale-125 transition" target="_blank" rel="noreferrer noopener" href={instagram} ><FaInstagram /></a>
                 </div>
                 <div className="flex flex-wrap items-center">
-                    <a className="hover:text-blue-400 hover:scale-125 transition" href={linkedIn} ><FaLinkedin /></a>
+                    <a className="hover:text-blue-400 hover:scale-125 transition" target="_blank" rel="noreferrer noopener" href={linkedIn} ><FaLinkedin /></a>
                 </div>
             </div>
         </div>
