@@ -106,7 +106,7 @@ function Member({ member }) {
             {member.fields.description}
           </p>
         </div>
-        <div>
+        <div className="flex flex-row">
           {member.fields.socialNetwork && member.fields.socialNetwork.map((social) => {
             return <Social key={social.sys.id} network={social.fields.socialMedia} url={social.fields.url} />
           })}
