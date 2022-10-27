@@ -36,7 +36,7 @@ export default function About({ page, team }) {
 function MetadataAbout({ metadata }) {
   return metadata.map((data) =>{
     return (
-      <Metadata title={data.fields.seoTitle} img={`https:${data.fields.image.fields.file.url}`}/>
+      <Metadata key={data.sys.id} title={data.fields.seoTitle} img={`https:${data.fields.image.fields.file.url}`}/>
     )
   })
 }
