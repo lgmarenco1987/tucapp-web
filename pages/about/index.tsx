@@ -34,9 +34,9 @@ export default function About({ page, team }) {
 }
 
 function MetadataAbout({ metadata }) {
-  return metadata.map((data) =>{
+  return metadata.map((data) => {
     return (
-      <Metadata key={data.sys.id} title={data.fields.seoTitle} img={`https:${data.fields.image.fields.file.url}`}/>
+      <Metadata key={data.sys.id} title={data.fields.seoTitle} img={`https:${data.fields.image.fields.file.url}`} />
     )
   })
 }
@@ -45,7 +45,7 @@ function MetadataAbout({ metadata }) {
 function Section({ reverse = false, data, team }) {
   const { fields } = data
   const { items } = team.team
-  const style = "hero-content flex-col justify-center items-center w-screen " + (reverse ? "lg:flex-row-reverse" : "lg:flex-row")
+  const style = "flex flex-col justify-center items-center " + (reverse ? "lg:flex-row-reverse" : "lg:flex-row")
   function htmlRendered(content: Document) {
     const Heading = ({ children }) => <h1 className={"text-6xl font-bold " + (reverse ? "text-secondary" : 'text-primary')}>{children}</h1>
     const Paragraph = ({ children }) => <blockquote className="py-6 text-2xl">{children}</blockquote>
@@ -65,16 +65,19 @@ function Section({ reverse = false, data, team }) {
         {!(fields.image === undefined || fields.image === null) ?
           <HeroImage image={fields.image.fields} />
           : (!fields.content ?
-            <div className="flex flex-col text-left md:gap-x-20 gap-y-5">
+            <div className="flex flex-col text-left">
               <div>
-                <h1 className="text-6xl font-bold">Equipo capp</h1>
+                <h1 className="text-6xl font-bold pb-10">Equipo Capp</h1>
               </div>
-              <div className="flex flex-col md:flex-row gap-20">
-                {items.map((item) => {
-                  return <Member key={item.sys.id} member={item} />
-                })}
+              <div className="flex flex-col mb-10">
+                <div className="flex flex-col justify-center sm:flex-row md:w-full">
+                  {items.map((item) => {
+                    return <Member key={item.sys.id} member={item} />
+                  })}
+                </div>
               </div>
             </div>
+
 
             : null)
         }
@@ -89,10 +92,10 @@ function Section({ reverse = false, data, team }) {
 
 function Member({ member }) {
   return (
-    <div className="flex flex-col gap-y-10 md:gap-20 md:flex-row">
+    <div className="flex flex-col mb-5 md:flex-row md:w-full">
       <div className="flex flex-col items-center gap-y-3">
         <div className="avatar">
-          <div className="w-60 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+          <div className="w-36 md:w-56 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <Image src={`https:` + member.fields.picture.fields.file.url} width={member.fields.picture.fields.file.details.image.width} height={member.fields.picture.fields.file.details.image.height} />
           </div>
         </div>
@@ -101,8 +104,8 @@ function Member({ member }) {
             {member.fields.nickname}
           </h1>
         </div>
-        <div className="w-full p-0">
-          <p className="text-lg text-center p-0">
+        <div className="h-2/3">
+          <p className="text-lg text-center">
             {member.fields.description}
           </p>
         </div>
@@ -119,7 +122,7 @@ function Member({ member }) {
 function Social({ network, url }) {
   switch (network) {
     case 'LinkedIn': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-blue-400 text-2xl"><FaLinkedin /></a>
-    case 'Facebook': return <a href={url} target="_blank" rel="noreferrer noopener"className="text-blue-600 text-2xl"><FaFacebookSquare /></a>
+    case 'Facebook': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-blue-600 text-2xl"><FaFacebookSquare /></a>
     case 'Instagram': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-pink-500 text-2xl"><FaInstagram /></a>
     case 'Twitter': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-blue-300 text-2xl"><FaTwitterSquare /></a>
     default:
