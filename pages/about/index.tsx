@@ -118,10 +118,10 @@ function Member({ member }) {
 
 function Social({ network, url }) {
   switch (network) {
-    case 'LinkedIn': return <a href={url} className="text-blue-400 text-2xl"><FaLinkedin /></a>
-    case 'Facebook': return <a href={url} className="text-blue-600 text-2xl"><FaFacebookSquare /></a>
-    case 'Instagram': return <a href={url} className="text-pink-500 text-2xl"><FaInstagram /></a>
-    case 'Twitter': return <a href={url} className="text-blue-300 text-2xl"><FaTwitterSquare /></a>
+    case 'LinkedIn': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-blue-400 text-2xl"><FaLinkedin /></a>
+    case 'Facebook': return <a href={url} target="_blank" rel="noreferrer noopener"className="text-blue-600 text-2xl"><FaFacebookSquare /></a>
+    case 'Instagram': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-pink-500 text-2xl"><FaInstagram /></a>
+    case 'Twitter': return <a href={url} target="_blank" rel="noreferrer noopener" className="text-blue-300 text-2xl"><FaTwitterSquare /></a>
     default:
       break;
   }
