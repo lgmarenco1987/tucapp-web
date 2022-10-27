@@ -4,23 +4,22 @@ import Head from "next/head"
 
 
 import { getMainContent } from "../lib/contentful"
+import Metadata from "../components/Metadata"
 
 export async function getServerSideProps() {
   const res = await getMainContent()
-  return {props: { home: res?.home?.fields }}
+  return { props: { home: res?.home?.fields } }
 }
 
 
-export default function Home({home}) {
-  
+export default function Home({ home }) {
+
   return (
     <>
-      <Head>
-        <title>Capp - Maneja lo Simple</title>
-      </Head>
+      <Metadata title="Capp - Maneja lo Simple" />
       <main>
-        <Hero content={home}/>
-        <Services content={home}/>
+        <Hero content={home} />
+        <Services content={home} />
       </main>
     </>
   );

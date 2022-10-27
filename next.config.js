@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['images.ctfassets.net']
+    domains: [
+      'images.ctfassets.net',
+      'placeimg.com'
+    ]
+
   }
 }
 

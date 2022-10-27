@@ -18,7 +18,8 @@ export default function Hero({ content }) {
                     <div style={{
                         backgroundImage: `url("/img/blob-1.svg")`,
                         backgroundRepeat: 'no-repeat',
-                        width: '75%'
+                        backgroundSize: 'contain',
+                        width: '100%'
                     }}>
                         <Image 
                         src={"https:" + mainContentImage.fields.file.url } 

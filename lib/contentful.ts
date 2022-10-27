@@ -22,3 +22,29 @@ export async function getMainContent() {
     home: res.items[0]
   }
 }
+
+type GetPageParams = {
+  content_type: string
+  pageTitle?: string 
+};
+
+export async function getPage(params:GetPageParams) {
+  const { items: [page] } = await client.getEntries({ 
+    content_type: params.content_type,
+    "fields.pageTitle": params.pageTitle
+  });
+  return page || null
+}
+
+
+type GetEntries = {
+  content_type: string
+};
+
+export async function fetchEntries(params:GetEntries) {
+  const res = await client.getEntries({ content_type: params.content_type })
+
+  return {
+    team: res
+  }
+}
